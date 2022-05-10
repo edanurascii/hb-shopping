@@ -1,0 +1,51 @@
+@import 'variables.scss';
+
+.filter-input-wrapper {
+    width           : 100%;
+    display         : flex;
+    justify-content : flex-start;
+    align-items     : center;
+    background-color: $backgroundGrey;
+    border-radius   : 100px;
+    padding         : 14.5px 5px;
+
+    .search-icon {
+        float  : left;
+        padding: 0 15px;
+    }
+
+    .filter-input-field {
+        width       : 100%;
+        float       : left;
+        background  : $backgroundGrey;
+        border      : unset;
+        border-style: unset !important;
+
+        &:focus-visible {
+            outline: unset !important;
+        }
+
+        &::placeholder {
+            font-style : normal !important;
+            font-weight: $regular !important;
+            font-size  : 15px !important;
+            color      : $lightGrey !important;
+        }
+
+        &::-webkit-input-placeholder {
+            /* Edge */
+            font-style : normal !important;
+            font-weight: $regular !important;
+            font-size  : 15px !important;
+            color      : $lightGrey !important;
+        }
+
+        &:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            font-style : normal !important;
+            font-weight: $regular !important;
+            font-size  : 15px !important;
+            color      : $lightGrey !important;
+        }
+    }
+}

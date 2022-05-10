@@ -1,0 +1,26 @@
+@import 'variables.scss';
+
+.basket-badge {
+    .BaseBadge-badge {
+        background-color: #ff6000;
+    }
+
+    .basket-button {
+        border        : 1px solid $lightGrey !important;
+        border-radius : 4px !important;
+        padding       : 11px 27px !important;
+        text-transform: unset !important;
+
+        &:hover {
+            background-color: rgba(176, 176, 176, 0.04) !important;
+        }
+
+        .basket-label {
+            font-style : normal;
+            font-weight: $regular;
+            font-size  : 17px;
+            line-height: 24px;
+            color      : $lightGrey;
+        }
+    }
+}
