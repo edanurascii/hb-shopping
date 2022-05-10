@@ -1,0 +1,60 @@
+@import 'variables.scss';
+
+.content-header {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+
+    .filtered-content-wrapper {
+        display       : flex;
+        flex-direction: column;
+        align-items   : flex-start;
+
+        .content-title {
+            font-style : normal;
+            font-weight: $bold;
+            font-size  : 28px;
+            line-height: 100%;
+            color      : #484848;
+        }
+
+        .filtered-product {
+            display        : flex;
+            justify-content: flex-start;
+            align-items    : center;
+            font-style     : normal;
+            font-weight    : $regular;
+            font-size      : 15px;
+            line-height    : 100%;
+            color          : $lightGrey;
+            padding-top    : 5px;
+
+            .filtered-product-text {
+                font-style : normal;
+                font-weight: $regular;
+                font-size  : 15px;
+                line-height: 100%;
+                color      : black;
+            }
+        }
+    }
+
+    .order-button {
+        border        : 1px solid $lightGrey !important;
+        border-radius : 4px !important;
+        padding       : 11px 17px !important;
+        text-transform: unset !important;
+
+        &:hover {
+            background-color: rgba(176, 176, 176, 0.04) !important;
+        }
+
+        .order-button-label {
+            font-style : normal;
+            font-weight: $regular;
+            font-size  : 17px;
+            line-height: 24px;
+            color      : $lightGrey;
+        }
+    }
+}
