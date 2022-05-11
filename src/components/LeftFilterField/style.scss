@@ -1,0 +1,27 @@
+@import 'variables.scss';
+
+.left-filter-field-container {
+    display        : flex;
+    flex-direction : column;
+    justify-content: flex-start;
+    white-space    : nowrap;
+    text-overflow  : ellipsis;
+
+    .filter-title {
+        font-weight: $medium;
+        font-size  : 16px;
+        line-height: 24px;
+    }
+
+    .list-items {
+        font-weight: 400;
+        font-size  : 14px;
+        line-height: 24px;
+        color      : #646464;
+        cursor     : pointer;
+
+        &:hover {
+            color: #ff6000;
+        }
+    }
+}

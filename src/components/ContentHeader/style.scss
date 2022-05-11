@@ -11,7 +11,6 @@
         align-items   : flex-start;
 
         .content-title {
-            font-style : normal;
             font-weight: $bold;
             font-size  : 28px;
             line-height: 100%;
@@ -22,39 +21,43 @@
             display        : flex;
             justify-content: flex-start;
             align-items    : center;
-            font-style     : normal;
-            font-weight    : $regular;
-            font-size      : 15px;
-            line-height    : 100%;
-            color          : $lightGrey;
             padding-top    : 5px;
 
-            .filtered-product-text {
-                font-style : normal;
+            .searched-item-label {
                 font-weight: $regular;
                 font-size  : 15px;
                 line-height: 100%;
-                color      : black;
+                color      : $lightGrey;
+            }
+
+            .filtered-product-text {
+                font-weight: $regular;
+                font-size  : 15px;
+                line-height: 100%;
+                color      : #000000;
             }
         }
     }
 
     .order-button {
-        border        : 1px solid $lightGrey !important;
-        border-radius : 4px !important;
-        padding       : 11px 17px !important;
-        text-transform: unset !important;
+        border       : 1px solid $lightGrey;
+        border-radius: 4px;
+        padding      : 11px 17.5px;
 
         &:hover {
-            background-color: rgba(176, 176, 176, 0.04) !important;
+            background-color: rgba(176, 176, 176, 0.08);
+            cursor          : pointer;
         }
 
         .order-button-label {
-            font-style : normal;
-            font-weight: $regular;
-            font-size  : 17px;
-            line-height: 24px;
-            color      : $lightGrey;
+            display        : flex;
+            justify-content: space-evenly;
+            gap            : 4px;
+            align-items    : center;
+            font-weight    : $regular;
+            font-size      : 17px;
+            line-height    : 24px;
+            color          : $lightGrey;
         }
     }
 }

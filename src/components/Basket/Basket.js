@@ -3,27 +3,30 @@ import React from 'react'
 // Styles
 import './style.scss'
 
-// Components
-import Button from '@mui/material/Button'
-import Badge from '@mui/material/Badge'
-
 function Basket() {
+    const itemsInBasket = 5
+
+    const handleShowBasket = event => {
+        console.log('Show products in basket')
+    }
+
     return (
-        <Badge
-            badgeContent={4}
-            color='primary'
-            className="basket-badge"
-        >
-            <Button
+        <div className='button-and-badge-wrapper'>
+            <div
                 className='basket-button'
-                variant="outlined"
-                disableFocusRipple={true}
-                disableRipple={true}
-                size='large'
+                onClick={event => handleShowBasket(event)}
             >
                 <span className='basket-label'>Sepetim</span>
-            </Button>
-        </Badge>
+            </div>
+            {
+                itemsInBasket > 0 &&
+                <div className='basket-badge'>
+                    <span className='basket-badge-number'>
+                        {itemsInBasket}
+                    </span>
+                </div>
+            }
+        </div>
     )
 }
 

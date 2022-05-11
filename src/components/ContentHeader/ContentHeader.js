@@ -6,11 +6,12 @@ import './style.scss'
 // Assets
 import downIcon from 'assets/down-icon.svg'
 
-// Components
-import { Button } from '@mui/material'
-
 function ContentHeader() {
     const filteredWord = 'iPhone 11'
+
+    const handleOrderButton = (event) => {
+        console.log('Show order options')
+    }
 
     return (
         <div className='content-header'>
@@ -19,28 +20,27 @@ function ContentHeader() {
                     iPhone iOS cep telefonu
                 </span>
                 <span className='filtered-product'>
-                    Aranan Kelime:
+                    <span className='searched-item-label'>
+                        Aranan Kelime:
+                    </span>
                     <span className='filtered-product-text'>
                         {`${filteredWord}`}
                     </span>
                 </span>
             </div>
-            <Button
+            <div
                 className='order-button'
-                variant="outlined"
-                disableFocusRipple={true}
-                disableRipple={true}
-                size='large'
-                endIcon={
+                onClick={event => handleOrderButton(event)}
+            >
+                <span className='order-button-label'>
+                    Sıralama
                     <img
                         src={downIcon}
                         className='button-down-icon'
                         alt='button-down-icon'
                     />
-                }
-            >
-                <span className='order-button-label'>Sıralama</span>
-            </Button>
+                </span>
+            </div>
         </div>
     )
 }

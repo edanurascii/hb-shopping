@@ -11,6 +11,9 @@ import products from 'products/products'
 
 // Components
 import ContentHeader from 'components/ContentHeader/ContentHeader'
+import LeftFilterField from 'components/LeftFilterField/LeftFilterField'
+import Product from 'components/Product/Product'
+import Pagination from 'components/Pagination/Pagination'
 
 function App() {
     const productsInLocalStorage = JSON.parse(localStorage.getItem('products'))
@@ -30,6 +33,15 @@ function App() {
             <Header />
             <div className='content-container'>
                 <ContentHeader />
+                <div className='filter-field-and-displayed-products-container'>
+                    <LeftFilterField />
+                    <Pagination
+                        data={productsInLocalStorage?.data}
+                        RenderComponent={Product}
+                        pageLimit={3}
+                        dataLimit={12}
+                    />
+                </div>
             </div>
         </div>
     )

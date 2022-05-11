@@ -1,22 +1,39 @@
 @import 'variables.scss';
 
-.basket-badge {
-    .BaseBadge-badge {
+.button-and-badge-wrapper {
+    display: flex;
+
+    .basket-badge {
+        position        : absolute;
+        top             : 15px;
+        right           : 71px;
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+        width           : 20px;
+        height          : 20px;
+        border-radius   : 50%;
         background-color: #ff6000;
+
+        .basket-badge-number {
+            font-weight: $medium;
+            font-size  : 12px;
+            line-height: 100%;
+            color      : #ffffff;
+        }
     }
 
     .basket-button {
-        border        : 1px solid $lightGrey !important;
-        border-radius : 4px !important;
-        padding       : 11px 27px !important;
-        text-transform: unset !important;
+        border       : 1px solid $lightGrey;
+        border-radius: 4px;
+        padding      : 11px 27px;
 
         &:hover {
-            background-color: rgba(176, 176, 176, 0.04) !important;
+            background-color: rgba(176, 176, 176, 0.08);
+            cursor          : pointer;
         }
 
         .basket-label {
-            font-style : normal;
             font-weight: $regular;
             font-size  : 17px;
             line-height: 24px;
