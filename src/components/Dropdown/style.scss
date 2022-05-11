@@ -1,0 +1,72 @@
+@import 'variables.scss';
+
+.dropdown-button {
+    position: relative;
+
+    .dropdown-title {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+        gap            : 5px;
+        border         : 1px solid $lightGrey;
+        border-radius  : 4px;
+        padding        : 11px 17.5px;
+        cursor         : pointer;
+
+        &:hover {
+            background-color: rgba(176, 176, 176, 0.08);
+            cursor          : pointer;
+        }
+    }
+
+    .title {
+        font-weight: $regular;
+        font-size  : 17px;
+        line-height: 24px;
+        color      : $lightGrey;
+        align-items: center;
+    }
+
+    .dropdown-icon {
+        display    : flex;
+        align-items: center;
+    }
+
+    .dropdown-menu {
+        transition-property: opacity, visibility;
+        transition-duration: .2s, 0s;
+        transition-delay   : 0s, .2s;
+        position           : absolute;
+        background         : #373737;
+        min-width          : 100%;
+        outline            : none;
+        left               : 0;
+        margin             : 0;
+
+        .dropdown-box {
+            margin : 0;
+            padding: 0;
+
+            .dropdown-item {
+                list-style: none;
+
+                .dropdown-link {
+                    display        : block;
+                    color          : #fff;
+                    transition     : all .2s;
+                    text-decoration: none;
+                    cursor         : pointer;
+                    white-space    : nowrap;
+                    padding        : 10px 40px;
+                    font-weight    : $regular;
+                    font-size      : 18px;
+                    line-height    : 100%;
+                }
+
+                &:hover {
+                    background-color: #1e59d1;
+                }
+            }
+        }
+    }
+}

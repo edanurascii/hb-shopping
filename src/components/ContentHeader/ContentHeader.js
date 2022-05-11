@@ -1,16 +1,25 @@
-import React from 'react'
-
 // Styles
 import './style.scss'
 
 // Assets
 import downIcon from 'assets/down-icon.svg'
 
+// Components
+import Dropdown from 'components/Dropdown/Dropdown'
+
 function ContentHeader() {
+    // dropdown options
+    const options = [
+        'En Düşük Fiyat',
+        'En Yüksek Fiyat',
+        'En Yeniler (A>Z)',
+        'En Yeniler (Z>A)'
+    ]
+
     const filteredWord = 'iPhone 11'
 
-    const handleOrderButton = (event) => {
-        console.log('Show order options')
+    const handleOnClick = (event, item) => {
+        console.log('dropdown option clicked')
     }
 
     return (
@@ -28,19 +37,13 @@ function ContentHeader() {
                     </span>
                 </span>
             </div>
-            <div
-                className='order-button'
-                onClick={event => handleOrderButton(event)}
-            >
-                <span className='order-button-label'>
-                    Sıralama
-                    <img
-                        src={downIcon}
-                        className='button-down-icon'
-                        alt='button-down-icon'
-                    />
-                </span>
-            </div>
+            <Dropdown
+                id='order-by-dropdown'
+                title='Sıralama'
+                dropdownItems={options}
+                onClickItem={handleOnClick}
+                dropdownIcon={downIcon}
+            />
         </div>
     )
 }
