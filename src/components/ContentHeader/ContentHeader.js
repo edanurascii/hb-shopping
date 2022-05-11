@@ -1,6 +1,9 @@
 // Styles
 import './style.scss'
 
+// Redux
+import { useSelector } from 'react-redux'
+
 // Assets
 import downIcon from 'assets/down-icon.svg'
 
@@ -8,6 +11,9 @@ import downIcon from 'assets/down-icon.svg'
 import Dropdown from 'components/Dropdown/Dropdown'
 
 function ContentHeader() {
+    // Global State
+    const filteredValue = useSelector((state) => state.filter.filteredValue)
+
     // dropdown options
     const options = [
         'En Düşük Fiyat',
@@ -15,8 +21,6 @@ function ContentHeader() {
         'En Yeniler (A>Z)',
         'En Yeniler (Z>A)'
     ]
-
-    const filteredWord = 'iPhone 11'
 
     const handleOnClick = (event, item) => {
         console.log('dropdown option clicked')
@@ -26,15 +30,20 @@ function ContentHeader() {
         <div className='content-header'>
             <div className='filtered-content-wrapper'>
                 <span className='content-title'>
-                    iPhone iOS cep telefonu
+                    {filteredValue}
                 </span>
                 <span className='filtered-product'>
-                    <span className='searched-item-label'>
-                        Aranan Kelime:
-                    </span>
-                    <span className='filtered-product-text'>
-                        {`${filteredWord}`}
-                    </span>
+                    {
+                        filteredValue.length > 0 &&
+                        <>
+                            <span className='searched-item-label'>
+                                Aranan Kelime:
+                            </span>
+                            <span className='filtered-product-text'>
+                                {filteredValue}
+                            </span>
+                        </>
+                    }
                 </span>
             </div>
             <Dropdown

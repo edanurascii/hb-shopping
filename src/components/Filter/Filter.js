@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+// Redux
+import { useSelector, useDispatch } from 'react-redux'
+import { filter } from './filterSlice'
 
 // Styles
 import './style.scss'
@@ -7,8 +9,14 @@ import './style.scss'
 import searchIcon from 'assets/search-icon.svg'
 
 function Filter() {
-    // Local States
-    const [filterValue, setFilterValue] = useState('')
+    // Global State
+    const filteredValue = useSelector((state) => state.filter.filteredValue)
+
+    const dispatch = useDispatch()
+
+    const handleFilterValueOnChange = event => {
+        dispatch(filter(event.target.value))
+    }
 
     return (
         <div className='filter-input-wrapper'>
@@ -21,9 +29,9 @@ function Filter() {
                 id='filter-input-field'
                 className='filter-input-field'
                 type="text"
-                value={filterValue}
+                value={filteredValue}
                 placeholder='25 milyon’dan fazla ürün içerisinde ara'
-                onChange={e => setFilterValue(e.target.value)}
+                onChange={e => handleFilterValueOnChange(e)}
             />
         </div>
     )
