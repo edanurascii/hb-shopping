@@ -1,15 +1,18 @@
 @import 'variables.scss';
 
 .App {
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width             : 4px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius     : 8px;
+        background-color  : rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    }
 
     .content-container {
         margin: 24px 80px;
-
-        .filter-field-and-displayed-products-container {
-            display        : flex;
-            justify-content: flex-start;
-            padding-top    : 20px;
-            column-gap     : 100px;
-        }
     }
 }

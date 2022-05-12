@@ -12,6 +12,11 @@ import App from './App'
 import { store } from 'redux/store'
 import { Provider } from 'react-redux'
 
+// Mock Data
+import products from 'products/products'
+
+localStorage.setItem("products", JSON.stringify(products))
+
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <React.StrictMode>

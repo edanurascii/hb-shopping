@@ -35,7 +35,6 @@
     .dropdown-menu {
         transition-property: opacity, visibility;
         transition-duration: .2s, 0s;
-        transition-delay   : 0s, .2s;
         position           : absolute;
         background         : #373737;
         min-width          : 100%;
@@ -47,25 +46,41 @@
             margin : 0;
             padding: 0;
 
-            .dropdown-item {
+            .dropdown-selected-item {
                 list-style: none;
 
-                .dropdown-link {
-                    display        : block;
-                    color          : #fff;
-                    transition     : all .2s;
-                    text-decoration: none;
-                    cursor         : pointer;
-                    white-space    : nowrap;
-                    padding        : 10px 40px;
-                    font-weight    : $regular;
-                    font-size      : 18px;
-                    line-height    : 100%;
+                &:before {
+                    content     : '✓';
+                    color       : #fff;
+                    position    : absolute;
+                    padding-top : 10px;
+                    padding-left: 12px;
                 }
 
                 &:hover {
                     background-color: #1e59d1;
                 }
+            }
+
+            .dropdown-item {
+                list-style: none;
+
+                &:hover {
+                    background-color: #1e59d1;
+                }
+            }
+
+            .dropdown-link {
+                display        : block;
+                color          : #fff;
+                transition     : all .2s;
+                text-decoration: none;
+                cursor         : pointer;
+                white-space    : nowrap;
+                padding        : 10px 40px;
+                font-weight    : $regular;
+                font-size      : 18px;
+                line-height    : 100%;
             }
         }
     }

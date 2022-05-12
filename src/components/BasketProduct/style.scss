@@ -1,0 +1,54 @@
+@import 'variables.scss';
+
+.product-in-basket {
+    display        : flex;
+    justify-content: flex-start;
+    margin         : 21px;
+
+    .image-border {
+        border-radius: 8px;
+        border       : 1px solid #e5e5e5;
+        max-width    : 54px;
+        max-height   : 75px;
+
+        .product-image {
+            width     : 40px;
+            height    : 60px;
+            padding   : 7px;
+            object-fit: cover;
+        }
+    }
+
+    .title-button-wrapper {
+        display        : flex;
+        flex-direction : column;
+        justify-content: space-between;
+        padding-left   : 10px;
+
+        .product-title {
+            font-weight: $regular;
+            font-size  : 12px;
+            line-height: 18px;
+            color      : #484848;
+        }
+
+        .remove-item-button {
+            background-color: #fff;
+            border          : 1px solid #F90000;
+            border-radius   : 4px;
+            max-width       : 48px;
+            cursor          : pointer;
+
+            .remove-button-label {
+                font-weight    : $regular;
+                font-size      : 10px;
+                line-height    : 18px;
+                display        : flex;
+                justify-content: center;
+                align-items    : center;
+                color          : #F90000;
+                padding        : 5px;
+            }
+        }
+    }
+}

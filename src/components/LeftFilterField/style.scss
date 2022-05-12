@@ -7,21 +7,33 @@
     white-space    : nowrap;
     text-overflow  : ellipsis;
 
+    .order-filter {
+        padding-top: 24px;
+    }
+
+    .brand-filter {
+        padding-top: 24px;
+    }
+
     .filter-title {
         font-weight: $medium;
         font-size  : 16px;
         line-height: 24px;
     }
 
-    .list-items {
-        font-weight: 400;
-        font-size  : 14px;
-        line-height: 24px;
-        color      : #646464;
-        cursor     : pointer;
+    .list-items-wrapper {
+        padding-top: 20px;
 
-        &:hover {
-            color: #ff6000;
+        .list-items {
+            font-weight: 400;
+            font-size  : 14px;
+            line-height: 24px;
+            color      : #646464;
+            cursor     : pointer;
+
+            &:hover {
+                color: #ff6000;
+            }
         }
     }
 }

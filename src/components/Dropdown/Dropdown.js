@@ -8,7 +8,8 @@ function Dropdown({
     title,
     dropdownItems,
     onClickItem,
-    dropdownIcon
+    dropdownIcon,
+    selectedItem
 }) {
     // Local State
     const [visible, setVisible] = useState(false)
@@ -62,7 +63,7 @@ function Dropdown({
                         dropdownItems && dropdownItems.map((item, index) => (
                             <li
                                 key={index}
-                                className='dropdown-item'
+                                className={selectedItem === item ? 'dropdown-selected-item' :'dropdown-item'}
                                 onClick={(e) => onClickItem(e, item)}
                             >
                                 <div className='dropdown-link'>

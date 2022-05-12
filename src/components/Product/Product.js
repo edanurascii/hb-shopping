@@ -1,22 +1,66 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+// Redux
+import { useDispatch, useSelector } from 'react-redux'
+import {
+    addToBasket,
+    productCountInBasket,
+    getProductsInBasket
+} from './productSlice'
 
 // Style
 import './style.scss'
 
-// Assets
-import iphoneYellow from 'assets/iphone-yellow.png'
+function Product({ data }) {
+    // Global State
+    const basketItems = useSelector(state => state.product.basketItems)
 
-// Components
+    // Props
+    const {
+        id,
+        title,
+        brand,
+        color,
+        price,
+        afterDiscountPrice,
+        discount,
+        //createdDate,
+        img
+    } = data
 
-
-function Product() {
-    // Local State
+    // Local States
     const [isHover, setIsHover] = useState(false)
     const [isInBasket, setIsInBasket] = useState(false)
 
-    const handleAddToBasket = (event) => {
-        console.log('Edanur')
+    const dispatch = useDispatch()
+
+    //const productsInBasket = JSON.parse(localStorage.getItem('basketItem'))
+
+    useEffect(() => {
+        dispatch(getProductsInBasket())
+        // eslint-disable-next-line
+    }, [])
+
+
+    useEffect(() => {
+        if (basketItems && basketItems.length > 0) {
+            basketItems.map(product => {
+                if (product.id === id) {
+                    setIsInBasket(true)
+                }
+            })
+        } else {
+            setIsInBasket(false)
+        }
+
+        dispatch(productCountInBasket())
+        // eslint-disable-next-line
+    }, [basketItems])
+
+    const handleAddToBasket = (event, data) => {
         setIsInBasket(true)
+        dispatch(addToBasket(data))
+        dispatch(productCountInBasket())
     }
 
     return (
@@ -27,7 +71,7 @@ function Product() {
                 onMouseLeave={() => setIsHover(false)}
             >
                 <img
-                    src={iphoneYellow}
+                    src={img}
                     className='product'
                     alt='product'
                 />
@@ -35,7 +79,7 @@ function Product() {
                     isHover &&
                     <div
                         className={isInBasket ? 'add-to-basket-button-disabled' : 'add-to-basket-button'}
-                        onClick={event => handleAddToBasket(event)}
+                        onClick={event => handleAddToBasket(event, data)}
                     >
                         <span className='add-to-basket-button-label'>
                             {isInBasket ? 'Bu ürünü sepete ekleyemezsiniz.' : 'Sepete Ekle'}
@@ -47,23 +91,23 @@ function Product() {
                 !isHover &&
                 <div className='product-description-wrapper'>
                     <span className='product-description'>
-                        Apple iPhone 11
+                        {title}
                     </span>
                     <span className='brand-and-color-description'>
                         <div className='description-wrapper'>
                             <span className='bold-description'>Marka: </span>
-                            <span className='name'>Apple</span>
+                            <span className='name'>{brand}</span>
                         </div>
                         <div className='description-wrapper'>
                             <span className='bold-description'>Renk: </span>
-                            <span className='name'>Siyah</span>
+                            <span className='name'>{color}</span>
                         </div>
                     </span>
                     <div className='price-and-discount-wrapper'>
-                        <span className='price-after-discount'>90,85 TL</span>
+                        <span className='price-after-discount'>{afterDiscountPrice}</span>
                         <div className='price-with-discount'>
-                            <span className='price'>124,00 TL</span>
-                            <span className='discount-rate'>12%</span>
+                            <span className='price'>{price}</span>
+                            <span className='discount-rate'>{discount}</span>
                         </div>
                     </div>
                 </div>

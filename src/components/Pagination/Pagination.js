@@ -5,17 +5,15 @@ import './style.scss'
 
 function Pagination({ data, RenderComponent, pageLimit, dataLimit }) {
     // Local States
-    const [pages] = useState(Math.round(data.length / dataLimit))
+    const [pages] = useState(Math.round(data?.length / dataLimit))
     const [currentPage, setCurrentPage] = useState(1)
 
     const goToNextPage = () => {
         setCurrentPage((page) => page + 1)
-        console.log(currentPage)
     }
 
     const goToPreviousPage = () => {
         setCurrentPage((page) => page <= 1 ? page : page - 1)
-        console.log(currentPage)
     }
 
     const changePage = event => {
@@ -26,8 +24,13 @@ function Pagination({ data, RenderComponent, pageLimit, dataLimit }) {
     const getPaginatedData = () => {
         const startIndex = currentPage * dataLimit - dataLimit
         const endIndex = startIndex + dataLimit
+        let dataArray = []
 
-        return data.slice(startIndex, endIndex)
+        Object.entries(data).map(([key, value]) => {
+            dataArray.push(value)
+        })
+
+        return dataArray.slice(startIndex, endIndex)
     }
 
     const getPaginationGroup = () => {

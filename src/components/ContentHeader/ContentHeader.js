@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 // Styles
 import './style.scss'
 
@@ -11,6 +13,9 @@ import downIcon from 'assets/down-icon.svg'
 import Dropdown from 'components/Dropdown/Dropdown'
 
 function ContentHeader() {
+    // Local State
+    const [selectedItem, setSelectedItem] = useState()
+
     // Global State
     const filteredValue = useSelector((state) => state.filter.filteredValue)
 
@@ -23,7 +28,7 @@ function ContentHeader() {
     ]
 
     const handleOnClick = (event, item) => {
-        console.log('dropdown option clicked')
+        setSelectedItem(item)
     }
 
     return (
@@ -52,6 +57,7 @@ function ContentHeader() {
                 dropdownItems={options}
                 onClickItem={handleOnClick}
                 dropdownIcon={downIcon}
+                selectedItem={selectedItem}
             />
         </div>
     )
