@@ -8,7 +8,7 @@ import { getProductDetails } from 'helpers/getProductDetails'
 
 function LeftFilterField() {
     // Local State
-    const [selectedIndex, setSelectedIndex] = useState(1)
+    const [/*selectedIndex,*/ setSelectedIndex] = useState(1)
 
     const productData = JSON.parse(localStorage.getItem('products'))
     const products = Object.assign([], productData?.data)

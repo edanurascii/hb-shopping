@@ -26,9 +26,7 @@ function Pagination({ data, RenderComponent, pageLimit, dataLimit }) {
         const endIndex = startIndex + dataLimit
         let dataArray = []
 
-        Object.entries(data).map(([key, value]) => {
-            dataArray.push(value)
-        })
+        Object.entries(data).map(([key, value]) => dataArray.push(value))
 
         return dataArray.slice(startIndex, endIndex)
     }
@@ -43,9 +41,7 @@ function Pagination({ data, RenderComponent, pageLimit, dataLimit }) {
         <div className='products-and-pagination-container'>
             <div className='products-wrapper'>
                 {
-                    getPaginatedData().map((product, idx) => (
-                        <RenderComponent key={idx} data={product} />
-                    ))
+                    getPaginatedData().map((product, idx) => <RenderComponent key={idx} data={product} />)
                 }
             </div>
             <div className='pagination'>

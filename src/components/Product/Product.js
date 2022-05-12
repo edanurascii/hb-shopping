@@ -44,11 +44,8 @@ function Product({ data }) {
 
     useEffect(() => {
         if (basketItems && basketItems.length > 0) {
-            basketItems.map(product => {
-                if (product.id === id) {
-                    setIsInBasket(true)
-                }
-            })
+            basketItems?.filter(value => value.id !== id && setIsInBasket(false))
+            basketItems?.map(product => product.id === id && setIsInBasket(true))
         } else {
             setIsInBasket(false)
         }
