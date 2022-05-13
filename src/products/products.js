@@ -31,7 +31,6 @@ const products = {
             price: '124,00 TL',
             afterDiscountPrice: '90,85',
             discount: '12%',
-            createdDate: '2019-10-03T23:27:13.228Z',
             img: iphoneGreen
         },
         {
@@ -42,7 +41,6 @@ const products = {
             price: '900,00 TL',
             afterDiscountPrice: '800,85',
             discount: '2%',
-            createdDate: '2019-09-20T05:14:06.668Z',
             img: iphoneYellow
         },
         {
@@ -53,7 +51,6 @@ const products = {
             price: '127,85 TL',
             afterDiscountPrice: '124,10',
             discount: '12%',
-            createdDate: '2020-11-11T07:42:03.719Z',
             img: iPhoneCaseRed
         },
         {
@@ -64,7 +61,6 @@ const products = {
             price: '155,85 TL',
             afterDiscountPrice: '124,10',
             discount: '12%',
-            createdDate: '2017-06-27T16:08:05.863Z',
             img: iPhonePurple
         },
         {
@@ -75,7 +71,6 @@ const products = {
             price: '124,00 TL',
             afterDiscountPrice: '90,85',
             discount: '12%',
-            createdDate: '2012-10-20T18:16:09.256Z',
             img: iphoneGreen
         },
         {
@@ -86,7 +81,6 @@ const products = {
             price: '900,00 TL',
             afterDiscountPrice: '800,85',
             discount: '2%',
-            createdDate: '2020-01-27T20:55:56.639Z',
             img: iphoneYellow
         },
         {
@@ -97,7 +91,6 @@ const products = {
             price: '127,85 TL',
             afterDiscountPrice: '124,10',
             discount: '12%',
-            createdDate: '2014-10-29T23:16:41.661Z',
             img: iPhoneCaseRed
         },
         {
@@ -108,7 +101,6 @@ const products = {
             price: '155,85 TL',
             afterDiscountPrice: '124,10',
             discount: '12%',
-            createdDate: '2014-10-29T23:16:42.661Z',
             img: iPhonePurple
         },
         {
@@ -119,7 +111,6 @@ const products = {
             price: '1232,45 TL',
             afterDiscountPrice: '1223,15',
             discount: '3%',
-            createdDate: '2021-09-25T19:55:30.252Z',
             img: xiaomi
         },
         {
@@ -130,7 +121,6 @@ const products = {
             price: '5800,00 TL',
             afterDiscountPrice: '5300,10',
             discount: '20%',
-            createdDate: '2019-09-17T22:26:02.391Z',
             img: samsungs
         },
         {
@@ -141,7 +131,6 @@ const products = {
             price: '4364,21 TL',
             afterDiscountPrice: '3456,85',
             discount: '2%',
-            createdDate: '2019-11-02T01:31:10.638Z',
             img: samsung
         },
         {
@@ -152,7 +141,6 @@ const products = {
             price: '345,75 TL',
             afterDiscountPrice: '342,12',
             discount: '2%',
-            createdDate: '2021-11-24T22:07:18.258Z',
             img: samsungGalaxyZ
         },
         {
@@ -163,7 +151,6 @@ const products = {
             price: '7546,25 TL',
             afterDiscountPrice: '7655,85',
             discount: '10%',
-            createdDate: '2014-04-23T15:09:14.475Z',
             img: samsungGalaxyS8
         },
         {
@@ -174,7 +161,6 @@ const products = {
             price: '135,00 TL',
             afterDiscountPrice: '105,80',
             discount: '10%',
-            createdDate: '2013-10-20T09:22:52.788Z',
             img: pinkNokia
         },
         {
@@ -185,7 +171,6 @@ const products = {
             price: '123,23 TL',
             afterDiscountPrice: '120,20',
             discount: '2%',
-            createdDate: '2016-10-22T21:32:21.888Z',
             img: nokia
         },
         {
@@ -196,7 +181,6 @@ const products = {
             price: '20,85 TL',
             afterDiscountPrice: '19,85',
             discount: '10%',
-            createdDate: '2022-03-09T00:25:44.247Z',
             img: nokia3310
         },
         {
@@ -207,7 +191,6 @@ const products = {
             price: '224,85 TL',
             afterDiscountPrice: '155,85',
             discount: '12%',
-            createdDate: '2013-07-07T11:06:35.042Z',
             img: LGV30
         },
         {
@@ -218,7 +201,6 @@ const products = {
             price: '3223,85 TL',
             afterDiscountPrice: '1552,85',
             discount: '12%',
-            createdDate: '2015-12-15T14:30:55.382Z',
             img: pinkLG
         },
         {
@@ -229,7 +211,6 @@ const products = {
             price: '222,85 TL',
             afterDiscountPrice: '157,85',
             discount: '12%',
-            createdDate: '2018-03-29T21:22:27.374Z',
             img: LGG6
         },
         {
@@ -240,7 +221,6 @@ const products = {
             price: '222,80 TL',
             afterDiscountPrice: '157,80',
             discount: '12%',
-            createdDate: '2020-07-23T14:05:02.013Z',
             img: LG20
         },
         {
@@ -251,7 +231,6 @@ const products = {
             price: '900,00 TL',
             afterDiscountPrice: '880,80',
             discount: '12%',
-            createdDate: '2020-04-02T05:18:02.947Z',
             img: huaweiP20
         },
         {
@@ -262,7 +241,6 @@ const products = {
             price: '225,85 TL',
             afterDiscountPrice: '556,85',
             discount: '12%',
-            createdDate: '2018-08-12T23:48:15.410Z',
             img: huaweiP20Lite
         },
         {
@@ -273,7 +251,6 @@ const products = {
             price: '3224,85 TL',
             afterDiscountPrice: '1553,85',
             discount: '12%',
-            createdDate: '2021-07-16T18:18:48.119Z',
             img: huaweiNova2
         },
         {
@@ -284,7 +261,6 @@ const products = {
             price: '300,85 TL',
             afterDiscountPrice: '200,85',
             discount: '10%',
-            createdDate: '2020-07-18T10:01:04.253Z',
             img: generalMobileGM6
         },
         {
@@ -295,7 +271,6 @@ const products = {
             price: '1224,85 TL',
             afterDiscountPrice: '1125,65',
             discount: '2%',
-            createdDate: '2020-03-11T19:45:56.833Z',
             img: generalMobileGM5Plus
         },
         {
@@ -306,7 +281,6 @@ const products = {
             price: '124,00 TL',
             afterDiscountPrice: '90,85',
             discount: '12%',
-            createdDate: '2020-04-23T21:21:29.371Z',
             img: iphoneGreen
         },
         {
@@ -317,7 +291,6 @@ const products = {
             price: '900,00 TL',
             afterDiscountPrice: '800,85',
             discount: '2%',
-            createdDate: '2012-03-26T14:31:54.010Z',
             img: iphoneYellow
         },
         {
@@ -328,7 +301,6 @@ const products = {
             price: '127,85 TL',
             afterDiscountPrice: '124,10',
             discount: '12%',
-            createdDate: '2016-04-15T20:35:11.889Z',
             img: iPhoneCaseRed
         },
         {
@@ -339,7 +311,6 @@ const products = {
             price: '155,85 TL',
             afterDiscountPrice: '124,10',
             discount: '12%',
-            createdDate: '2017-01-29T13:13:45.265Z',
             img: iPhonePurple
         },
         {
@@ -350,7 +321,6 @@ const products = {
             price: '124,00 TL',
             afterDiscountPrice: '90,85',
             discount: '12%',
-            createdDate: '2016-12-26T23:59:41.782Z',
             img: iphoneGreen
         },
         {
@@ -361,7 +331,6 @@ const products = {
             price: '900,00 TL',
             afterDiscountPrice: '800,85',
             discount: '2%',
-            createdDate: '2014-09-25T16:28:20.975Z',
             img: iphoneYellow
         },
         {
@@ -372,7 +341,6 @@ const products = {
             price: '127,85 TL',
             afterDiscountPrice: '124,10',
             discount: '12%',
-            createdDate: '2017-05-21T10:35:11.156Z',
             img: iPhoneCaseRed
         },
         {
@@ -383,7 +351,6 @@ const products = {
             price: '155,85 TL',
             afterDiscountPrice: '124,10',
             discount: '12%',
-            createdDate: '2013-11-26T04:13:20.327Z',
             img: iPhonePurple
         },
         {
@@ -394,7 +361,6 @@ const products = {
             price: '4364,21 TL',
             afterDiscountPrice: '3456,85',
             discount: '2%',
-            createdDate: '2021-08-15T13:10:18.317Z',
             img: samsung
         },
         {
@@ -405,7 +371,6 @@ const products = {
             price: '1224,85 TL',
             afterDiscountPrice: '1125,65',
             discount: '2%',
-            createdDate: '2021-12-24T02:18:20.705Z',
             img: generalMobileGM5Plus
         },
         {
@@ -416,7 +381,6 @@ const products = {
             price: '345,75 TL',
             afterDiscountPrice: '342,12',
             discount: '2%',
-            createdDate: '2020-06-10T09:24:44.555Z',
             img: samsungGalaxyZ
         }
     ]

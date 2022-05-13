@@ -15,33 +15,48 @@ function Basket() {
     const basketItems = useSelector(state => state.product.basketItems)
 
     // Local State
-    const [isBasketVisible, setIsBasketVisible] = useState(false)
+    const [isHover, setIsHover] = useState(false)
 
-    const wrapperRef = useRef(null)
+    const contentRef = useRef(null)
 
     // listen to outside click for closing the dropdown
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
-                setIsBasketVisible(false)
+            if (contentRef.current && !contentRef.current.contains(event.target)) {
+                setIsHover(false)
             }
         }
 
-        document.addEventListener('mousedown', handleClickOutside)
+        document.addEventListener('mouseleave', handleClickOutside)
         return () => {
-            document.removeEventListener('mousedown', handleClickOutside)
+            document.removeEventListener('mouseleave', handleClickOutside)
         };
-    }, [wrapperRef])
+    }, [contentRef])
 
-    const handleShowBasket = event => {
-        setIsBasketVisible(!isBasketVisible)
-    }
+    useEffect(() => {
+        if (basketItems.length > 1) {
+            let _basketItems = Object.assign([], basketItems)
+
+            _basketItems.sort((a, b) => {
+                if (a?.addedDate && b?.addedDate) {
+                    if (a.addedDate < b.addedDate) {
+                        return -1
+                    }
+                    if (a.addedDate > b.addedDate) {
+                        return 1
+                    }
+                }
+                return 0
+            })
+        }
+    }, [basketItems])
 
     return (
-        <div className='button-and-badge-wrapper' ref={wrapperRef}>
+        <div className='button-and-badge-wrapper'>
             <div
-                className={productsInBasket > 0 && isBasketVisible ? 'basket-button-active' : 'basket-button'}
-                onClick={event => handleShowBasket(event)}
+                className={productsInBasket > 0 && isHover ? 'basket-button-active' : 'basket-button'}
+                onMouseEnter={() => setIsHover(true)}
+                onMouseLeave={() => setIsHover(false)}
             >
                 <span className='basket-label'>Sepetim</span>
             </div>
@@ -54,8 +69,13 @@ function Basket() {
                 </div>
             }
             {
-                productsInBasket > 0 && isBasketVisible &&
-                <div className='basket-content'>
+                productsInBasket > 0 && isHover &&
+                <div
+                    ref={contentRef}
+                    className='basket-content'
+                    onMouseEnter={() => setIsHover(true)}
+                    onMouseLeave={() => setIsHover(false)}
+                >
                     {
                         basketItems.map((product, idx) => (
                             <BasketProduct

@@ -24,7 +24,6 @@ function Product({ data }) {
         price,
         afterDiscountPrice,
         discount,
-        //createdDate,
         img
     } = data
 
@@ -34,13 +33,10 @@ function Product({ data }) {
 
     const dispatch = useDispatch()
 
-    //const productsInBasket = JSON.parse(localStorage.getItem('basketItem'))
-
     useEffect(() => {
         dispatch(getProductsInBasket())
         // eslint-disable-next-line
     }, [])
-
 
     useEffect(() => {
         if (basketItems && basketItems.length > 0) {

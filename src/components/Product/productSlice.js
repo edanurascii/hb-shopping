@@ -22,14 +22,18 @@ export const productSlice = createSlice({
         },
         addToBasket: (state, action) => {
             let currentProduct = action.payload
+            let _currentProduct = Object.assign({}, currentProduct)
+
+            _currentProduct.addedDate = new Date().getTime()
+
             let prevBasketItems = Object.assign([], state.basketItems)
             let basketItemsInLocalStorage = Object.assign([], JSON.parse(localStorage.getItem('basketItem')))
 
-            basketItemsInLocalStorage.push(currentProduct)
+            basketItemsInLocalStorage.push(_currentProduct)
 
             localStorage.setItem('basketItem', JSON.stringify(basketItemsInLocalStorage))
 
-            state.basketItems = [...prevBasketItems, currentProduct]
+            state.basketItems = [...prevBasketItems, _currentProduct]
         },
         productCountInBasket: (state, action) => {
             let basketItemsInLocalStorage = Object.assign([], JSON.parse(localStorage.getItem('basketItem')))

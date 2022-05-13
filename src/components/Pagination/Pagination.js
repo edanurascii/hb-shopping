@@ -41,7 +41,14 @@ function Pagination({ data, RenderComponent, pageLimit, dataLimit }) {
         <div className='products-and-pagination-container'>
             <div className='products-wrapper'>
                 {
-                    getPaginatedData().map((product, idx) => <RenderComponent key={idx} data={product} />)
+                    getPaginatedData().map((product, index) => {
+                        return (
+                            <RenderComponent
+                                key={index}
+                                data={product}
+                            />
+                        )
+                    })
                 }
             </div>
             <div className='pagination'>
@@ -55,9 +62,8 @@ function Pagination({ data, RenderComponent, pageLimit, dataLimit }) {
                 {
                     getPaginationGroup().map((item, index) => (
                         currentPage !== item ?
-                            <a id='scroll-to-top' href='#root'>
+                            <a key={index} id='scroll-to-top' href='#root'>
                                 <button
-                                    key={index}
                                     onClick={changePage}
                                     className='pagination-item'
                                 >

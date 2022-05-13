@@ -46,8 +46,8 @@
     .basket-button-active {
         border                    : 1px solid $lightGrey;
         border-radius             : 4px;
-        padding                   : 12px 27px 11px 27px;
-        border-bottom             : unset;
+        padding                   : 11px 27px 11px 27px;
+        border-bottom             : 1px solid transparent;
         border-bottom-left-radius : unset;
         border-bottom-right-radius: unset;
         background-color          : #fff;

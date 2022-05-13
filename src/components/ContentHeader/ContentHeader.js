@@ -39,7 +39,7 @@ function ContentHeader() {
                 </span>
                 <span className='filtered-product'>
                     {
-                        filteredValue.length > 0 &&
+                        filteredValue.length > 2 &&
                         <>
                             <span className='searched-item-label'>
                                 Aranan Kelime:
