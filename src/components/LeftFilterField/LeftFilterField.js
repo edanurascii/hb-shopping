@@ -1,4 +1,11 @@
-import { useState } from 'react'
+// Redux
+import { useDispatch } from 'react-redux'
+import {
+    setFilteredCriteria,
+    setFilterBy,
+    filter
+} from '../Filter/filterSlice'
+import { setCurrentPage } from 'components/Pagination/paginationSlice'
 
 // Styles
 import './style.scss'
@@ -7,8 +14,7 @@ import './style.scss'
 import { getProductDetails } from 'helpers/getProductDetails'
 
 function LeftFilterField() {
-    // Local State
-    const [/*selectedIndex,*/ setSelectedIndex] = useState(1)
+    const dispatch = useDispatch()
 
     const productData = JSON.parse(localStorage.getItem('products'))
     const products = Object.assign([], productData?.data)
@@ -23,8 +29,11 @@ function LeftFilterField() {
     const colorRepeated = colors[1]
     const brandRepeated = brands[1]
 
-    const handleListItemClick = (event, index) => {
-        setSelectedIndex(index)
+    const handleListItemClick = (event, filterCriteria, filterBy) => {
+        dispatch(filter(''))
+        dispatch(setCurrentPage(1))
+        dispatch(setFilteredCriteria(filterCriteria))
+        dispatch(setFilterBy(filterBy))
     }
 
     return (
@@ -36,9 +45,10 @@ function LeftFilterField() {
                         colorOptions.length > 0 &&
                         colorOptions.map((color, idx) => (
                             <div
+                                tabIndex={idx}
                                 key={idx}
                                 className='list-items'
-                                onClick={event => handleListItemClick(event, 1)}
+                                onClick={event => handleListItemClick(event, color, 'color')}
                             >
                                 {`${color} (${colorRepeated[color]})`}
                             </div>
@@ -54,9 +64,10 @@ function LeftFilterField() {
                         orders && orders.length > 0 &&
                         orders.map((order, idx) => (
                             <div
+                                tabIndex={idx}
                                 key={idx}
                                 className='list-items'
-                                onClick={event => handleListItemClick(event, 1)}
+                                onClick={event => handleListItemClick(event, order, 'order')}
                             >
                                 {order}
                             </div>
@@ -71,9 +82,10 @@ function LeftFilterField() {
                         brandOptions.length > 0 &&
                         brands[0].map((brand, idx) => (
                             <div
+                                tabIndex={idx}
                                 key={idx}
                                 className='list-items'
-                                onClick={event => handleListItemClick(event, 1)}
+                                onClick={event => handleListItemClick(event, brand, 'brand')}
                             >
                                 {`${brand} (${brandRepeated[brand]})`}
                             </div>

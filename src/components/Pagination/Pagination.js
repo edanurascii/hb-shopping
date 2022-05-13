@@ -1,24 +1,31 @@
-import { useState } from 'react'
+// Redux
+import { useSelector, useDispatch } from 'react-redux'
+import { setCurrentPage } from 'components/Pagination/paginationSlice'
 
 // Styles
 import './style.scss'
 
 function Pagination({ data, RenderComponent, pageLimit, dataLimit }) {
-    // Local States
-    const [pages] = useState(Math.round(data?.length / dataLimit))
-    const [currentPage, setCurrentPage] = useState(1)
+    // Global States
+    const currentPage = useSelector(state => state.pagination.currentPage)
+
+    const dispatch = useDispatch()
 
     const goToNextPage = () => {
-        setCurrentPage((page) => page + 1)
+        dispatch(setCurrentPage(currentPage + 1))
     }
 
     const goToPreviousPage = () => {
-        setCurrentPage((page) => page <= 1 ? page : page - 1)
+        if (currentPage <= 1) {
+            dispatch(setCurrentPage(currentPage))
+        } else {
+            dispatch(setCurrentPage(currentPage - 1))
+        }
     }
 
     const changePage = event => {
         const pageNumber = Number(event.target.textContent)
-        setCurrentPage(pageNumber)
+        dispatch(setCurrentPage(pageNumber))
     }
 
     const getPaginatedData = () => {
@@ -83,7 +90,7 @@ function Pagination({ data, RenderComponent, pageLimit, dataLimit }) {
 
                 <button
                     onClick={goToNextPage}
-                    className={`next ${currentPage === pages ? 'disabled' : ''}`}
+                    className={`next ${currentPage === pageLimit ? 'disabled' : ''}`}
                 >
                     {'>'}
                 </button>

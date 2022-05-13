@@ -3,6 +3,9 @@
 .product-with-container {
     display       : flex;
     flex-direction: column;
+    align-items   : center;
+    flex          : 1 0 21%;
+    width         : 254px;
 
     .product-image-border {
         border-radius: 8px;

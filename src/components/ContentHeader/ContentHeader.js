@@ -1,4 +1,12 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+// Redux
+import { useDispatch } from 'react-redux'
+import {
+    setFilteredCriteria,
+    setFilterBy
+} from '../Filter/filterSlice'
+
 
 // Styles
 import './style.scss'
@@ -18,6 +26,10 @@ function ContentHeader() {
 
     // Global State
     const filteredValue = useSelector((state) => state.filter.filteredValue)
+    const filterCriteria = useSelector((state) => state.filter.filterCriteria)
+    const filterBy = useSelector((state) => state.filter.filterBy)
+
+    const dispatch = useDispatch()
 
     // dropdown options
     const options = [
@@ -27,8 +39,16 @@ function ContentHeader() {
         'En Yeniler (Z>A)'
     ]
 
+    useEffect(() => {
+        if (filterBy === 'order') {
+            setSelectedItem(filterCriteria)
+        }
+    }, [filterCriteria, filterBy])
+
     const handleOnClick = (event, item) => {
         setSelectedItem(item)
+        dispatch(setFilteredCriteria(item))
+        dispatch(setFilterBy('order'))
     }
 
     return (
