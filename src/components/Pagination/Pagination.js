@@ -54,13 +54,24 @@ function Pagination({ data, RenderComponent, pageLimit, dataLimit }) {
 
                 {
                     getPaginationGroup().map((item, index) => (
-                        <button
-                            key={index}
-                            onClick={changePage}
-                            className={`pagination-item ${currentPage === item ? 'active' : null}`}
-                        >
-                            <span>{item}</span>
-                        </button>
+                        currentPage !== item ?
+                            <a id='scroll-to-top' href='#root'>
+                                <button
+                                    key={index}
+                                    onClick={changePage}
+                                    className='pagination-item'
+                                >
+                                    <span>{item}</span>
+                                </button>
+                            </a>
+                            :
+                            <button
+                                key={index}
+                                onClick={changePage}
+                                className={`pagination-item ${currentPage === item ? 'active' : null}`}
+                            >
+                                <span>{item}</span>
+                            </button>
                     ))
                 }
 
