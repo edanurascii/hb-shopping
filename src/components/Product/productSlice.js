@@ -3,7 +3,9 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     products: [],
     basketItems: [],
-    productsInBasket: null
+    productsInBasket: null,
+    isModalVisible: false,
+    productToBeRemoved: null
 }
 
 export const productSlice = createSlice({
@@ -45,6 +47,12 @@ export const productSlice = createSlice({
             localStorage.setItem('basketItem', JSON.stringify(newArr))
 
             state.basketItems = Object.assign([], JSON.parse(localStorage.getItem('basketItem')))
+        },
+        setModalVisible: (state, action) => {
+            state.isModalVisible = action.payload
+        },
+        setProductToBeRemoved: (state, action) => {
+            state.productToBeRemoved = action.payload
         }
     },
 })
@@ -54,7 +62,9 @@ export const {
     getProductsInBasket,
     addToBasket,
     productCountInBasket,
-    removeProduct
+    removeProduct,
+    setModalVisible,
+    setProductToBeRemoved
 } = productSlice.actions
 
 export default productSlice.reducer

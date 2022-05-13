@@ -1,8 +1,8 @@
 // Redux
 import { useDispatch } from 'react-redux'
 import {
-    removeProduct,
-    productCountInBasket
+    setModalVisible,
+    setProductToBeRemoved
 } from 'components/Product/productSlice'
 
 // Styles
@@ -17,8 +17,9 @@ function BasketProduct({ product }) {
     const dispatch = useDispatch()
 
     const handleRemoveProduct = (event, product) => {
-        dispatch(removeProduct(product))
-        dispatch(productCountInBasket())
+        dispatch(setModalVisible(true))
+
+        dispatch(setProductToBeRemoved(product))
     }
 
     return (
