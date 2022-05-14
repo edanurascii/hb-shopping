@@ -2,6 +2,7 @@
 // and returns products that applied required filter
 export const filterOrSortProducts = (filterCriteria, filterBy, products) => {
     let filterResult = []
+    let _products = Object.assign([], products)
 
     if (filterBy === 'color') {
         filterResult = products.filter(product => {
@@ -12,7 +13,7 @@ export const filterOrSortProducts = (filterCriteria, filterBy, products) => {
             return product.brand.includes(filterCriteria)
         })
     } else if (filterBy === 'order' && filterCriteria === 'En Düşük Fiyat') {
-        filterResult = products.sort((productA, productB) => {
+        filterResult = _products.sort((productA, productB) => {
             let firstProductPrice = Number(productA.afterDiscountPrice)
             let secondProductPrice = Number(productB.afterDiscountPrice)
 
@@ -25,7 +26,7 @@ export const filterOrSortProducts = (filterCriteria, filterBy, products) => {
             return 0
         })
     } else if (filterBy === 'order' && filterCriteria === 'En Yüksek Fiyat') {
-        filterResult = products.sort((productA, productB) => {
+        filterResult = _products.sort((productA, productB) => {
             let firstProductPrice = Number(productA.afterDiscountPrice)
             let secondProductPrice = Number(productB.afterDiscountPrice)
 
@@ -38,7 +39,7 @@ export const filterOrSortProducts = (filterCriteria, filterBy, products) => {
             return 0
         })
     } else if (filterBy === 'order' && filterCriteria === 'En Yeniler (A>Z)') {
-        filterResult = products.sort((productA, productB) => {
+        filterResult = _products.sort((productA, productB) => {
             if (productA.createdDate < productB.createdDate) {
                 return -1
             }
@@ -49,7 +50,7 @@ export const filterOrSortProducts = (filterCriteria, filterBy, products) => {
         })
     }
     else if (filterBy === 'order' && filterCriteria === 'En Yeniler (Z>A)') {
-        filterResult = products.sort((productA, productB) => {
+        filterResult = _products.sort((productA, productB) => {
             if (productA.createdDate < productB.createdDate) {
                 return 1
             }

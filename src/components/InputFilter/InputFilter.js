@@ -8,7 +8,7 @@ import './style.scss'
 // Assets
 import searchIcon from 'assets/search-icon.svg'
 
-function Filter() {
+function InputFilter() {
     // Global State
     const filteredValue = useSelector((state) => state.filter.filteredValue)
 
@@ -37,4 +37,4 @@ function Filter() {
     )
 }
 
-export default Filter
+export default InputFilter

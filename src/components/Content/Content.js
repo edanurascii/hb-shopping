@@ -19,17 +19,16 @@ function Content() {
     const filteredValue = useSelector(state => state.filter.filteredValue)
     const filterCriteria = useSelector(state => state.filter.filterCriteria)
     const filterBy = useSelector(state => state.filter.filterBy)
+    const products = useSelector(state => state.product.products)
 
     // Local State
     const [filteredProducts, setFilteredProducts] = useState([])
-
-    const products = JSON.parse(localStorage.getItem('products'))
 
     useEffect(() => {
         let filterResult = []
 
         if (filteredValue?.length > 2) {
-            filterResult = products.data.filter(product => {
+            filterResult = products.filter(product => {
                 let productTitle = product.title.toLowerCase()
                 return productTitle.includes(filteredValue.toLowerCase())
             })
@@ -43,7 +42,7 @@ function Content() {
 
     useEffect(() => {
         if (filterCriteria && filterBy) {
-            let filterResult = filterOrSortProducts(filterCriteria, filterBy, products.data)
+            let filterResult = filterOrSortProducts(filterCriteria, filterBy, products)
 
             setFilteredProducts(filterResult)
         }
@@ -67,7 +66,7 @@ function Content() {
                     />
                     :
                     <Pagination
-                        data={products.data}
+                        data={products}
                         RenderComponent={Product}
                         pageLimit={3}
                         dataLimit={12}

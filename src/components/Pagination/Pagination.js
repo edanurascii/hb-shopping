@@ -59,12 +59,14 @@ function Pagination({ data, RenderComponent, pageLimit, dataLimit }) {
                 }
             </div>
             <div className='pagination'>
-                <button
-                    onClick={goToPreviousPage}
-                    className={`prev ${currentPage === 1 ? 'disabled' : ''}`}
-                >
-                    {'<'}
-                </button>
+                <a id='scroll-to-top' href='#root'>
+                    <button
+                        onClick={goToPreviousPage}
+                        className={`prev ${currentPage === 1 ? 'disabled' : ''}`}
+                    >
+                        {'<'}
+                    </button>
+                </a>
 
                 {
                     getPaginationGroup().map((item, index) => (
@@ -87,13 +89,14 @@ function Pagination({ data, RenderComponent, pageLimit, dataLimit }) {
                             </button>
                     ))
                 }
-
-                <button
-                    onClick={goToNextPage}
-                    className={`next ${currentPage === pageLimit ? 'disabled' : ''}`}
-                >
-                    {'>'}
-                </button>
+                <a id='scroll-to-top' href='#root'>
+                    <button
+                        onClick={goToNextPage}
+                        className={`next ${currentPage === pageLimit ? 'disabled' : ''}`}
+                    >
+                        {'>'}
+                    </button>
+                </a>
             </div>
         </div>
     )

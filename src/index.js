@@ -17,7 +17,7 @@ import products from 'products/products'
 
 localStorage.setItem("products", JSON.stringify(products))
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
+const root = ReactDOM.createRoot(document.getElementById('root')) || document.createElement('div') // for testing
 root.render(
     <React.StrictMode>
         <Provider store={store}>

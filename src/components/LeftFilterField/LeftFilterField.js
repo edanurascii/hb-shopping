@@ -4,7 +4,7 @@ import {
     setFilteredCriteria,
     setFilterBy,
     filter
-} from '../Filter/filterSlice'
+} from '../InputFilter/filterSlice'
 import { setCurrentPage } from 'components/Pagination/paginationSlice'
 
 // Styles

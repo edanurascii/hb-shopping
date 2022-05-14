@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import {
     setFilteredCriteria,
     setFilterBy
-} from '../Filter/filterSlice'
+} from '../InputFilter/filterSlice'
 
 
 // Styles

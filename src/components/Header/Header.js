@@ -11,7 +11,7 @@ import './style.scss'
 import headerLogo from 'assets/headerLogo.svg'
 
 // Components
-import Filter from 'components/Filter/Filter'
+import InputFilter from 'components/InputFilter/InputFilter'
 import Basket from 'components/Basket/Basket'
 
 function Header() {
@@ -31,7 +31,7 @@ function Header() {
                         className='header-logo'
                         alt='header-logo'
                     />
-                    <Filter />
+                    <InputFilter />
                     <Basket />
                 </div>
             </div>

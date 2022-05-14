@@ -15,6 +15,9 @@ import {
 // Components
 import Header from './components/Header/Header'
 
+// Mock data
+import products from 'products/products'
+
 // Components
 import ContentHeader from 'components/ContentHeader/ContentHeader'
 import Content from 'components/Content/Content'
@@ -26,10 +29,9 @@ function App() {
     const productToBeRemoved = useSelector(state => state.product.productToBeRemoved)
 
     const dispatch = useDispatch()
-    const productData = JSON.parse(localStorage.getItem('products'))
 
     useEffect(() => {
-        dispatch(setProducts(productData.data))
+        dispatch(setProducts(products.data))
         // eslint-disable-next-line
     }, [])
 
@@ -44,7 +46,7 @@ function App() {
     }
 
     return (
-        <div className="App">
+        <div className="App" data-testid='hepsiburada-app'>
             <Header />
             <div className='content-container'>
                 <ContentHeader />
