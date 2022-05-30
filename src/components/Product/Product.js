@@ -72,7 +72,7 @@ function Product({ data }) {
                     isHover &&
                     <div
                         className={isInBasket ? 'add-to-basket-button-disabled' : 'add-to-basket-button'}
-                        onClick={event => handleAddToBasket(event, data)}
+                        onClick={event => !isInBasket && handleAddToBasket(event, data)}
                     >
                         <span className='add-to-basket-button-label'>
                             {isInBasket ? 'Bu ürünü sepete ekleyemezsiniz.' : 'Sepete Ekle'}
